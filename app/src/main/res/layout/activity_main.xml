@@ -9,6 +9,7 @@
             type="com.example.shareourlife.MainViewModel" />
     </data>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,13 +20,34 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context=".MainActivity">
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/sakura" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:textSize="25dp"
+                android:gravity="left|center"
+                android:text="吴凡" />
+        </LinearLayout>
+
+
         <Button
-            android:id="@+id/button_toJumptest"
+            android:id="@+id/button_JumpToProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{vm.Click_toJump}"
+            android:onClick="@{vm.Jump_ToProfile}"
             android:textAllCaps="false"
-            android:text="Click_toJumptest" />
+            android:text="Jump_ToProfile" />
 
     </LinearLayout>
 </layout>

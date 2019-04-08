@@ -20,8 +20,10 @@ public abstract class MvvmActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, getLayoutId());
-        Preconditions.checkNotNull(binding, "bindingClass in " + MvvmActivity.this.getClass().getSimpleName());
-        binding.setVariable(BR.vm, createViewModel());
+
+        //为了在其他地方，也能进行动态绑定，我们new一个Binder类
+//        Preconditions.checkNotNull(binding, "bindingClass in " + MvvmActivity.this.getClass().getSimpleName());
+//        binding.setVariable(BR.vm, createViewModel());
 
         getDefaultBinder().bind(binding, createViewModel());
     }

@@ -7,7 +7,11 @@ package com.example.shareourlife;
  * 定义在BaseActivity中是因为，new Intent(BaseActivity.this, destination.class)之后，所有的继承在BaseActivity的Activity都可以直接调用
  */
 public interface Navigator {
-    void navigateToTestActivity();
+    void ToProfile();
+
+    void ToFollowinglistActivity();
+
+    void ToFollowerlsitActivity();
 
 
 }

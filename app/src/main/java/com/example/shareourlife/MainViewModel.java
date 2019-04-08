@@ -19,6 +19,6 @@ public class MainViewModel extends ViewModel {
     //怎么做页面跳转呢？android-mvvm-root项目中是怎么完成的呢？
     //加一层抽象，通过传递一个Navigator类，来处理跳转。
     //Navigator是通过BaseActivity确定的，里面有跳转到所有页面的方法。所以VM中不需要持有Activity引用
-    public final Action Click_toJump = () -> navigator.navigateToTestActivity();
+    public final Action Jump_ToProfile = () -> navigator.ToProfile();
 
 }
