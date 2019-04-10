@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 import com.example.shareourlife.MVVM.MvvmActivity;
 import com.example.shareourlife.myProfile.FollowerlsitActivity;
-import com.example.shareourlife.myProfile.FollowinglistActivity;
+import com.example.shareourlife.myProfile.FollowingListActivity;
 import com.example.shareourlife.myProfile.ProfileActivity;
 
 public abstract class BaseActivity extends MvvmActivity {
@@ -18,7 +18,7 @@ public abstract class BaseActivity extends MvvmActivity {
             public void ToProfile() { toJump(ProfileActivity.class); }
 
             @Override
-            public void ToFollowinglistActivity() { toJump(FollowinglistActivity.class); }
+            public void ToFollowinglistActivity() { toJump(FollowingListActivity.class); }
 
             @Override
             public void ToFollowerlsitActivity() { toJump(FollowerlsitActivity.class); }

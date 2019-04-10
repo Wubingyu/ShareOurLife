@@ -12,4 +12,11 @@
     <color name="white">#ffffff</color>
     <color name="black">#000</color>
 
+    <color name="white1">#fafaf6</color>
+    <color name="white2">#00fff0</color>
+    <color name="white3">#00d1ff</color>
+    <color name="white4">#3d6cb9</color>
+
+    <color name="grey">#d1d1d1</color>
+
 </resources>

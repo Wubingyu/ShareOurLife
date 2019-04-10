@@ -7,29 +7,54 @@
     tools:context=".myProfile.PersonInfoActivity"
     android:orientation="vertical"
     >
-
-    <!--一个TextInputLayout只能嵌套一个-->
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp">
+<!--        <ImageView
+            android:src="@drawable/ic_info"
+            android:scaleType="centerCrop"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />-->
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:text="账号信息"
+            android:textSize="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="你的昵称"
-            android:text="sakura"/>
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+<!--    <android.support.design.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp">-->
 
-        <EditText
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginBottom="15dp"
+            android:overScrollMode="never"
+            android:id="@+id/PersonInfo_recyclerView_Info"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ayane"
-            android:hint="你的昵称"/>
-    </android.support.design.widget.TextInputLayout>
+            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
 
+    <!--</android.support.design.card.MaterialCardView>-->
+
+    <TextView
+        android:text="账户安全"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+<!--    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">-->
+
+        <android.support.v7.widget.RecyclerView
+            android:overScrollMode="never"
+            android:id="@+id/PersonInfo_recyclerView_security"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+    <!--</android.support.design.card.MaterialCardView>-->
 
 </LinearLayout>
