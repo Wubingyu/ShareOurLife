@@ -9,24 +9,21 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 
 import com.example.shareourlife.BaseActivity;
 import com.example.shareourlife.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ProfileActivity extends BaseActivity {
     private static final int EDIT_INFO = 1;
-
     private static final String TAG = "ProfileActivity";
     Toolbar toolbar;
     //    ImageView imageView;
@@ -46,6 +43,10 @@ public class ProfileActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.Theme_Design_NoActionBar);
+        }
+//        setTheme(R.style.Theme_Design_NoActionBar);
         super.onCreate(savedInstanceState);
         toolbar = findViewById(R.id.toolbar_profile);
 //            imageView = findViewById(R.id.userHead_profile);
@@ -110,9 +111,15 @@ public class ProfileActivity extends BaseActivity {
                     case 3:
                         if (isChecked) {
                             ToastMessage("Switch On");
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                         } else {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                             ToastMessage("Switch Off");
                         }
+                        Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
+                        startActivity(intent);
+                        finish();
+                        break;
                 }
             }
         });
@@ -124,6 +131,7 @@ public class ProfileActivity extends BaseActivity {
         viewPager = findViewById(R.id.profile_ViewPager);
         viewPager.setAdapter(introduce_viewPagerAdapter);
     }
+
 
     @Override
     protected void onResume() {

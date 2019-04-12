@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -41,6 +42,15 @@ public class PersonInfo_RecyclerViewAdapter extends RecyclerView.Adapter<Recycle
 
     public interface PersonInfo_RecyclerViewAdapter_Listener {
         void RadioGroupCheckChange(PersonInfo_RecyclerViewItem_radioButton item_radioButton);
+
+        void selectBirthday(TextView textView);
+
+        void setNickName(TextView textView);
+
+        void ChangeSexPrivacy(PersonInfo_RecyclerViewItem_radioButton item, MaterialButton materialButton);
+
+        //我觉得这个img_item中可能应该存的是bitmap。因为UCrop切割出来的是bitmap
+        void CropPicture(PersonInfo_RecyclerViewItem_img img_item, int height, int width, ImageView imageView);
     }
 
     PersonInfo_RecyclerViewAdapter_Listener listener = null;
@@ -93,6 +103,12 @@ public class PersonInfo_RecyclerViewAdapter extends RecyclerView.Adapter<Recycle
             PersonInfo_RecyclerViewItem_edit edit_item = (PersonInfo_RecyclerViewItem_edit) item.getT();
             ((Edit_ViewHolder) viewHolder).edit_tag.setText(edit_item.getEdit_tag());
             ((Edit_ViewHolder) viewHolder).edit_context.setText(edit_item.getEdit_context());
+
+            if (listener != null) {
+                if (edit_item.getEdit_tag().equals("生日")) ((Edit_ViewHolder) viewHolder).edit_linearLayout.setOnClickListener(v -> listener.selectBirthday(((Edit_ViewHolder) viewHolder).edit_context));
+                if (edit_item.getEdit_tag().equals("昵称")) ((Edit_ViewHolder) viewHolder).edit_linearLayout.setOnClickListener(v -> listener.setNickName(((Edit_ViewHolder) viewHolder).edit_context));
+
+            }
         }
         //**********************************判断viewHolder是哪种
         else if (viewHolder instanceof RadioButton_ViewHolder && itemType == PERSON_INFO_radioButton_ITEM) {
@@ -112,12 +128,13 @@ public class PersonInfo_RecyclerViewAdapter extends RecyclerView.Adapter<Recycle
 
             } else{
                 ((RadioButton_ViewHolder) viewHolder).radioButton_MB.setIconResource(radioButton_item.unlock_icon);
-                ((RadioButton_ViewHolder) viewHolder).radioButton_MB.setText("公开");
+                ((RadioButton_ViewHolder) viewHolder).radioButton_MB.setText("公   开");
 
             }
             //监听
             if (listener != null) {
                 ((RadioButton_ViewHolder) viewHolder).radioGroup.setOnCheckedChangeListener((arg, id) -> listener.RadioGroupCheckChange(radioButton_item));
+                ((RadioButton_ViewHolder) viewHolder).radioButton_MB.setOnClickListener(v -> listener.ChangeSexPrivacy(radioButton_item, ((RadioButton_ViewHolder) viewHolder).radioButton_MB));
             }
         }
         //**********************************判断viewHolder是哪种
@@ -133,6 +150,18 @@ public class PersonInfo_RecyclerViewAdapter extends RecyclerView.Adapter<Recycle
                 ((Img_ViewHolder) viewHolder).img.setImageResource(img_item.getImg_id());
             }
             ((Img_ViewHolder) viewHolder).img_tag.setText(img_item.getImg_tag());
+
+            //点击响应，设置图片
+            if (listener != null) {
+                if (img_item.getImg_tag().equals("头像")) ((Img_ViewHolder) viewHolder).img_linearLayout.setOnClickListener(v -> listener.CropPicture(img_item, 1, 1,((Img_ViewHolder) viewHolder).img));
+                if (img_item.getImg_tag().equals("个人主页背景")) ((Img_ViewHolder) viewHolder).img_linearLayout.setOnClickListener(v->listener.CropPicture(img_item, 1,2,((Img_ViewHolder) viewHolder).img));
+
+                //设置修改后的图片
+//                if (img_item.getImg_bitmap() != null) {
+//                    ((Img_ViewHolder) viewHolder).img.setImageBitmap(img_item.getImg_bitmap());
+//                }
+            }
+
         }
         //**********************************判断viewHolder是哪种
         else if (viewHolder instanceof Security_ViewHolder && itemType == PERSON_INFO_SECURITY_ITEM) {
@@ -185,10 +214,12 @@ public class PersonInfo_RecyclerViewAdapter extends RecyclerView.Adapter<Recycle
      */
     public class Edit_ViewHolder extends RecyclerView.ViewHolder {
         TextView edit_tag, edit_context;
+        LinearLayout edit_linearLayout;
         public Edit_ViewHolder(@NonNull View itemView) {
             super(itemView);
             edit_tag = itemView.findViewById(R.id.PersonInfo_edit_tag);
             edit_context = itemView.findViewById(R.id.PersonInfo_edit_context);
+            edit_linearLayout = itemView.findViewById(R.id.PersonInfo_edit_LinearLayout);
         }
     }
 
@@ -212,12 +243,14 @@ public class PersonInfo_RecyclerViewAdapter extends RecyclerView.Adapter<Recycle
      * 图片类item
      */
     public class Img_ViewHolder extends RecyclerView.ViewHolder {
+        LinearLayout img_linearLayout;
         TextView img_tag;
         ImageView img;
         public Img_ViewHolder(@NonNull View itemView) {
             super(itemView);
             img_tag = itemView.findViewById(R.id.PersonInfo_img_tag);
             img = itemView.findViewById(R.id.PersonInfo_img_img);
+            img_linearLayout = itemView.findViewById(R.id.PersonInfo_img_LinearLayout);
         }
     }
 

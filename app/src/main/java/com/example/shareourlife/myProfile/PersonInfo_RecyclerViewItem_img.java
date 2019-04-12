@@ -1,8 +1,11 @@
 package com.example.shareourlife.myProfile;
 
+import android.graphics.Bitmap;
+
 public class PersonInfo_RecyclerViewItem_img {
     private String img_tag;
     private int img_id;
+    private Bitmap img_bitmap;
 
     public PersonInfo_RecyclerViewItem_img(String img_tag, int img_id) {
         this.img_tag = img_tag;
@@ -23,5 +26,13 @@ public class PersonInfo_RecyclerViewItem_img {
 
     public void setImg_id(int img_id) {
         this.img_id = img_id;
+    }
+
+    public Bitmap getImg_bitmap() {
+        return img_bitmap;
+    }
+
+    public void setImg_bitmap(Bitmap img_bitmap) {
+        this.img_bitmap = img_bitmap;
     }
 }

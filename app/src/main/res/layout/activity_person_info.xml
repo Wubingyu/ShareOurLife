@@ -7,30 +7,31 @@
     tools:context=".myProfile.PersonInfoActivity"
     android:orientation="vertical"
     >
-    <LinearLayout
+<!--    <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="15dp">
-<!--        <ImageView
+&lt;!&ndash;        <ImageView
             android:src="@drawable/ic_info"
             android:scaleType="centerCrop"
             android:layout_width="24dp"
-            android:layout_height="24dp" />-->
+            android:layout_height="24dp" />&ndash;&gt;-->
         <TextView
             android:layout_gravity="center_vertical"
             android:text="账号信息"
             android:textSize="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </LinearLayout>
+    <!--</LinearLayout>-->
 <!--    <android.support.design.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp">-->
 
         <android.support.v7.widget.RecyclerView
+            android:background="@color/skin"
             android:layout_marginBottom="15dp"
             android:overScrollMode="never"
             android:id="@+id/PersonInfo_recyclerView_Info"
@@ -51,6 +52,7 @@
         android:layout_height="wrap_content">-->
 
         <android.support.v7.widget.RecyclerView
+            android:background="@color/skin"
             android:overScrollMode="never"
             android:id="@+id/PersonInfo_recyclerView_security"
             android:layout_width="match_parent"

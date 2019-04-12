@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--头像、背景-->
 <LinearLayout
+    android:id="@+id/PersonInfo_img_LinearLayout"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="60dp"
     android:orientation="horizontal">
@@ -18,9 +19,9 @@
         android:layout_height="40dp" />
 
     <ImageView
-        android:layout_marginTop="3dp"
         android:id="@+id/PersonInfo_img_img"
-        android:gravity="center_vertical"
+        android:layout_marginTop="3dp"
+        android:gravity="center_vertical|end"
         android:layout_width="55dp"
         android:layout_marginRight="2dp"
         android:layout_height="55dp"
