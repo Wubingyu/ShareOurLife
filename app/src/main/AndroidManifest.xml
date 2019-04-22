@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shareourlife">
-    <!--使用相册前务必！-->
+    <!-- 使用相册前务必！ -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,7 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
-        <activity android:name=".myProfile.MessageActivity"></activity>
+        <activity android:name=".myFloder.Article_Activity"></activity>
+        <activity android:name=".myFloder.Folder_Activity" />
+        <activity android:name=".myFloder.FolderListActivity" />
+        <activity android:name=".myProfile.MessageActivity" />
         <activity android:name=".myProfile.PersonInfoActivity" />
         <activity android:name=".myProfile.FollowerlsitActivity" />
         <activity android:name=".myProfile.FollowingListActivity" />
@@ -25,12 +28,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Add UCropActivity into your AndroidManifest.xml -->
+        </activity> <!-- Add UCropActivity into your AndroidManifest.xml -->
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
+
 </manifest>

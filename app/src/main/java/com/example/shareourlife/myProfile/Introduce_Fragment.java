@@ -12,8 +12,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.shareourlife.R;
+import com.example.shareourlife.Trans_Fragment;
 
-public class Introduce_Fragment extends Fragment {
+public class Introduce_Fragment extends Trans_Fragment {
     public static final String PROFILE_INTRODUCE_CARD_TITLE = "PROFILE_INTRODUCE_CARD_TITLE";
     public static final String PROFILE_INTRODUCE_CARD_CONTEXT = "PROFILE_INTRODUCE_CARD_CONTEXT";
     String title = null;
@@ -59,6 +60,7 @@ public class Introduce_Fragment extends Fragment {
         return view;
     }
 
+    @Override
     public CardView getCardView() {
         return cardView;
     }

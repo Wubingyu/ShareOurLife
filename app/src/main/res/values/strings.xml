@@ -8,11 +8,24 @@
     <string name="title_two_way_binding">Two Way Binding</string>
     <string name="title_calculator">Calculator Example</string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
-    
+
     <string name="interest">足球、篮球、乒乓球、听音乐、看小说，也非常喜欢听相声（主要听郭德纲于谦）。喜欢听的音乐类型是：纯音乐、古典音乐、歌剧等</string>
     <string name="book">我非常喜欢阅读，现在主要用微信读书，倒是不怎么买纸质书了。也会读一些青春文学（笑） 比如八月长安的《暗恋，橘生淮南》，也读江南的九州缥缈录</string>
     <string name="cartoon">看动画也是我的一大爱好，这点应该和蛮多人有共鸣的吧？我很喜欢看一些轻松的动画，最喜欢的当然是宫崎骏大师监督的动画了。比如风之谷、幽灵公主、千与千寻、魔女宅急便、红猪、起风了等等。几乎宫崎骏先生的所有作品我都非常喜欢</string>
-    
+
+    <string name="child_love">Good love makes you see the whole world for one person while bad love makes you abandon the whole world for one person</string>
+    <string name="summer_night">
+        "水色に はなびらの浴衣がこの世で一番\n"
+        "似合うのはたぶん君だと思う\n"
+        "よく誘えた 泣きそうだ\n"
+        "夏祭りの最後の日\n"
+        "わたがしを口で溶かす君は\n"
+        "わたがしになりたい僕に言う\n"
+        "楽しいねって\n"
+    </string>
+
+    <string name="sakura_ayane">佐倉綾音とは、正義</string>
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

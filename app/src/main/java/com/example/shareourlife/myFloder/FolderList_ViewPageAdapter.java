@@ -1,4 +1,4 @@
-package com.example.shareourlife.myProfile;
+package com.example.shareourlife.myFloder;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -7,14 +7,12 @@ import android.support.v7.widget.CardView;
 import com.example.shareourlife.Trans_FragmentPagerAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Introduce_ViewPagerAdapter extends Trans_FragmentPagerAdapter {
-    public static final int MAX_ELEVATION_FACTOR = 8;
-    List<Introduce_Fragment> fragments = new ArrayList<>();
+public class FolderList_ViewPageAdapter extends Trans_FragmentPagerAdapter {
+    ArrayList<Folder_Fragment> fragments = new ArrayList<>();
     private float mBaseElevation;
 
-    public Introduce_ViewPagerAdapter(FragmentManager fm, ArrayList<Introduce_Fragment> fragments, float baseElevation) {
+    public FolderList_ViewPageAdapter(FragmentManager fm, ArrayList<Folder_Fragment> fragments, float baseElevation) {
         super(fm);
         this.fragments = fragments;
         mBaseElevation = baseElevation;

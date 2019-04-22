@@ -4,6 +4,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
 import android.view.View;
 
+import com.example.shareourlife.Trans_FragmentPagerAdapter;
+
 
 /**
  * 说是什么Shadow变化，其实是大小和高度变化
@@ -11,11 +13,11 @@ import android.view.View;
 public class Introduce_ShadowTransformer implements ViewPager.OnPageChangeListener, ViewPager.PageTransformer {
 
     private ViewPager mViewPager;
-    private Introduce_ViewPagerAdapter mAdapter;
+    private Trans_FragmentPagerAdapter mAdapter;
     private float mLastOffset;
     private boolean mScalingEnabled;
 
-    public Introduce_ShadowTransformer(ViewPager viewPager, Introduce_ViewPagerAdapter adapter) {
+    public Introduce_ShadowTransformer(ViewPager viewPager, Trans_FragmentPagerAdapter adapter) {
         mViewPager = viewPager;
         viewPager.addOnPageChangeListener(this);
         mAdapter = adapter;
