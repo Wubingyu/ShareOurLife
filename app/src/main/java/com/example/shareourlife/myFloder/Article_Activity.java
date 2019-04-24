@@ -34,5 +34,8 @@ public class Article_Activity extends AppCompatActivity {
         imageView.setImageResource(img_id);
         titleView.setText(title);
         contextView.setText(context);
+
+        //Navigation怎么做：
+        //学习平行世界，自定义behavior，下滑到底出现菜单，上滑出现菜单
     }
 }

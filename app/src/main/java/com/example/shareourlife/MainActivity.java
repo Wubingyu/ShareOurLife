@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatDelegate;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.shareourlife.Explore.ExploreMainActivity;
 import com.example.shareourlife.myFloder.FolderListActivity;
 import com.example.shareourlife.myProfile.ProfileActivity;
 
@@ -34,6 +35,12 @@ public class MainActivity extends BaseActivity {
         Button button = findViewById(R.id.buttom_JumpToFolderList);
         button.setOnClickListener(v->{
             Intent intent = new Intent(MainActivity.this, FolderListActivity.class);
+            startActivity(intent);
+        });
+
+        Button button1 = findViewById(R.id.button_JumpToExplore);
+        button1.setOnClickListener(v->{
+            Intent intent = new Intent(MainActivity.this, ExploreMainActivity.class);
             startActivity(intent);
         });
     }

@@ -48,4 +48,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
     //图片剪裁
     implementation 'com.yalantis:ucrop:2.2.0-native'
+    implementation 'com.lorentzos.swipecards:library:1.0.9'
+
+    implementation 'me.yuqirong:cardswipelayout:1.0.0'
 }

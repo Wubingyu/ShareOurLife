@@ -14,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
-        <activity android:name=".myFloder.Article_Activity"></activity>
+        <activity android:name=".Explore.UserHomePage_Activity"></activity>
+        <activity android:name=".Explore.ExploreMainActivity" />
+        <activity android:name=".myFloder.Article_Activity" />
         <activity android:name=".myFloder.Folder_Activity" />
         <activity android:name=".myFloder.FolderListActivity" />
         <activity android:name=".myProfile.MessageActivity" />
