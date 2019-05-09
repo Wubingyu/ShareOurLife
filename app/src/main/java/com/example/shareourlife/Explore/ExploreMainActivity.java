@@ -87,9 +87,9 @@ public class ExploreMainActivity extends AppCompatActivity {
     }
 
     private void initItems() {
-        ExploreMain_RecyclerViewItem item1 = new ExploreMain_RecyclerViewItem(R.drawable.summer_night, "夏祭", "花火浴衣，长泽雅美", "2019-4-22", R.drawable.back_number, "back_number");
-        ExploreMain_RecyclerViewItem item2 = new ExploreMain_RecyclerViewItem(R.drawable.img2, "Bohemian Rhapsody", "Queen, Live, Wembley Stadium, July 1986", "2019-3-20", R.drawable.img3, "Queen");
-        ExploreMain_RecyclerViewItem item3 = new ExploreMain_RecyclerViewItem(R.drawable.sakura_ayane, "佐仓绫音", getResources().getString(R.string.sakura_ayane),"2019-1-30",R.drawable.sakura,"佐仓绫音");
+        ExploreMain_RecyclerViewItem item1 = new ExploreMain_RecyclerViewItem(R.drawable.fight_marry, "求婚大作战", getResources().getString(R.string.fight_marry), "2019-4-22", R.drawable.yamapi, "山下智久");
+        ExploreMain_RecyclerViewItem item2 = new ExploreMain_RecyclerViewItem(R.drawable.long_vacation, "悠长假期", getResources().getString(R.string.long_vacation),"2019-1-30",R.drawable.takuya,"木村拓哉");
+        ExploreMain_RecyclerViewItem item3 = new ExploreMain_RecyclerViewItem(R.drawable.img2, "Bohemian Rhapsody", "Queen, Live, Wembley Stadium, July 1986", "2019-3-20", R.drawable.img3, "Queen");
         items.add(item1);
         items.add(item2);
         items.add(item3);

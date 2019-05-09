@@ -90,13 +90,16 @@ public class FolderListActivity extends AppCompatActivity {
     }
 
     private void init_fragments() {
-        Folder_Fragment fragment1 = Folder_Fragment.newInstance("两小无猜", getResources().getString(R.string.child_love), getDrawable(R.drawable.child_love));
-        Folder_Fragment fragment2 = Folder_Fragment.newInstance("わたがし", getResources().getString(R.string.summer_night), getDrawable(R.drawable.summer_night));
+        Folder_Fragment fragment1 = Folder_Fragment.newInstance("新垣结衣", getResources().getString(R.string.gakki), getDrawable(R.drawable.gakki));
+        Folder_Fragment fragment2 = Folder_Fragment.newInstance("长泽雅美", getResources().getString(R.string.masami), getDrawable(R.drawable.masami));
         Folder_Fragment fragment3 = Folder_Fragment.newInstance("佐仓绫音", getResources().getString(R.string.sakura_ayane), getDrawable(R.drawable.sakura_ayane));
+        Folder_Fragment fragment4 = Folder_Fragment.newInstance("わたがし", getResources().getString(R.string.summer_night), getDrawable(R.drawable.summer_night));
 
         fragments.add(fragment1);
         fragments.add(fragment2);
         fragments.add(fragment3);
+        fragments.add(fragment4);
+
     }
 
 
