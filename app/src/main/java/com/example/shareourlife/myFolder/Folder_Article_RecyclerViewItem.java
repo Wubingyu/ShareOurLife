@@ -1,4 +1,4 @@
-package com.example.shareourlife.myFloder;
+package com.example.shareourlife.myFolder;
 
 public class Folder_Article_RecyclerViewItem {
     String title;

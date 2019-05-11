@@ -16,9 +16,9 @@
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity android:name=".Explore.UserHomePage_Activity"></activity>
         <activity android:name=".Explore.ExploreMainActivity" />
-        <activity android:name=".myFloder.Article_Activity" />
-        <activity android:name=".myFloder.Folder_Activity" />
-        <activity android:name=".myFloder.FolderListActivity" />
+        <activity android:name=".myFolder.Article_Activity" />
+        <activity android:name=".myFolder.Folder_Activity" />
+        <activity android:name=".myFolder.FolderListActivity" />
         <activity android:name=".myProfile.MessageActivity" />
         <activity android:name=".myProfile.PersonInfoActivity" />
         <activity android:name=".myProfile.FollowerlsitActivity" />

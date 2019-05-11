@@ -1,4 +1,4 @@
-package com.example.shareourlife.myFloder;
+package com.example.shareourlife.myFolder;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +8,9 @@ import android.widget.TextView;
 
 import com.example.shareourlife.R;
 
-import static com.example.shareourlife.myFloder.Folder_Activity.CONTEXT;
-import static com.example.shareourlife.myFloder.Folder_Activity.IMG_ID;
-import static com.example.shareourlife.myFloder.Folder_Activity.TITLE;
+import static com.example.shareourlife.myFolder.Folder_Activity.CONTEXT;
+import static com.example.shareourlife.myFolder.Folder_Activity.IMG_ID;
+import static com.example.shareourlife.myFolder.Folder_Activity.TITLE;
 
 public class Article_Activity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.shareourlife.myFloder;
+package com.example.shareourlife.myFolder;
 
 import android.content.Intent;
 import android.graphics.Bitmap;

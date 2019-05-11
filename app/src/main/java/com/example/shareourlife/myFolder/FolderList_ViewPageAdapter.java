@@ -1,4 +1,4 @@
-package com.example.shareourlife.myFloder;
+package com.example.shareourlife.myFolder;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

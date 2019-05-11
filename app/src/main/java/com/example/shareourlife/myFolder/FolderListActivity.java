@@ -1,24 +1,16 @@
-package com.example.shareourlife.myFloder;
+package com.example.shareourlife.myFolder;
 
 import android.annotation.SuppressLint;
-import android.content.ClipData;
-import android.content.Context;
-import android.os.Build;
 import android.support.design.bottomappbar.BottomAppBar;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.menu.ActionMenuItemView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.example.shareourlife.R;
-import com.example.shareourlife.myProfile.Introduce_Fragment;
 import com.example.shareourlife.myProfile.Introduce_ShadowTransformer;
 
 import java.util.ArrayList;

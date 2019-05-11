@@ -1,4 +1,4 @@
-package com.example.shareourlife.myFloder;
+package com.example.shareourlife.myFolder;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

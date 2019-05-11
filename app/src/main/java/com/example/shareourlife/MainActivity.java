@@ -4,14 +4,12 @@ import android.arch.lifecycle.ViewModel;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatDelegate;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.shareourlife.Explore.ExploreMainActivity;
-import com.example.shareourlife.myFloder.FolderListActivity;
+import com.example.shareourlife.myFolder.FolderListActivity;
 import com.example.shareourlife.myProfile.ProfileActivity;
 
 public class MainActivity extends BaseActivity {
