@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.shareplatform.Entity.Article;
 import com.example.shareplatform.R;
+import com.example.shareplatform.utils.InstanceEntityHelper;
 import com.example.shareplatform.utils.ItemTouchHelperAdapter;
 
 import java.util.ArrayList;
@@ -60,8 +61,10 @@ public class CardArticle_ListAdapter extends RecyclerView.Adapter<CardArticle_Li
 
     @Override
     public void onSwipe(int position) {
+        InstanceEntityHelper.removeArticleByID(items.get(position).getArticleId());
         items.remove(position);
         notifyItemRemoved(position);
+
     }
 
     @Override

@@ -20,7 +20,7 @@
         <ImageView
             android:id="@+id/ExploreItem_img"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="190dp"
             android:scaleType="centerCrop"
             android:src="@drawable/gakki"
             />
@@ -48,5 +48,51 @@
             android:paddingLeft="16dp"
             android:text="@string/gakki"
             />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp">
+            <com.example.shareplatform.utils.CircleImageView
+                android:layout_marginLeft="24dp"
+                android:id="@+id/ExploreItem_userImg"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/e"
+                />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:alpha="0.5"
+                    android:id="@+id/ExploreItem_userName"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="罗马人的故事"/>
+
+
+                <TextView
+                    android:id="@+id/ExploreItem_date"
+                    android:alpha="0.3"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="end"
+                    android:text="2019-4-22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

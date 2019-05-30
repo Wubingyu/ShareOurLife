@@ -17,6 +17,7 @@ import com.example.shareplatform.Fragment.ArticleShowFragment;
 import com.example.shareplatform.Fragment.ExploreFragment;
 import com.example.shareplatform.Fragment.FolderListFragment;
 import com.example.shareplatform.Fragment.MessageFragment;
+import com.example.shareplatform.Fragment.UserFragment;
 import com.example.shareplatform.utils.InstanceEntityHelper;
 
 import java.util.ArrayList;
@@ -62,10 +63,12 @@ public class MainActivity extends AppCompatActivity {
 
         MessageFragment messageFragment = MessageFragment.newInstance(messageList);
         ExploreFragment exploreFragment = ExploreFragment.newInstance(exploreList);
+        UserFragment userFragment = new UserFragment();
 
         fragments.add(folderListFragment);
         fragments.add(messageFragment);
         fragments.add(exploreFragment);
+        fragments.add(userFragment);
 
 
     }
@@ -155,17 +158,22 @@ public class MainActivity extends AppCompatActivity {
     public void showArticleWithTransition(Fragment current, int ArticleID) {
         ArticleShowFragment articleFragment = ArticleShowFragment.newInstance(ArticleID);
         getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(
+                        R.anim.slide_top_in,
+                        R.anim.slide_bottom_out,
+                        R.anim.slide_bottom_in,
+                        R.anim.slide_top_out)
                 .replace(R.id.fragment_placeholder, articleFragment)
                 .addToBackStack(null)
                 .commit();
     }
 
     private void initExplore() {
-        ExploreArticle item1 = new ExploreArticle("新垣结衣", getString(R.string.gakki), R.drawable.gakki);
-        ExploreArticle item2 = new ExploreArticle("罗马", "罗马不是一天建成的", R.drawable.i);
-        ExploreArticle item3 = new ExploreArticle("李健", "音乐傲骨", R.drawable.j);
-        ExploreArticle item4 = new ExploreArticle("罗马", "罗马不是一天建成的", R.drawable.i);
-        ExploreArticle item5 = new ExploreArticle("李健", "音乐傲骨", R.drawable.j);
+        ExploreArticle item1 = new ExploreArticle("新垣结衣", getString(R.string.gakki), R.drawable.gakki, R.drawable.headimg1,"漫漫旅途","2018-05-26");
+        ExploreArticle item2 = new ExploreArticle("罗马", "罗马不是一天建成的", R.drawable.i, R.drawable.headimg2, "曾浩然", "2019-01-08");
+        ExploreArticle item3 = new ExploreArticle("李健", "音乐傲骨", R.drawable.j, R.drawable.headimg3, "LAIKIAF", "2019-05-17");
+        ExploreArticle item4 = new ExploreArticle("罗马", "罗马不是一天建成的", R.drawable.i, R.drawable.headimg4, "杨志远", "2018-11-25");
+        ExploreArticle item5 = new ExploreArticle("李健", "音乐傲骨", R.drawable.j, R.drawable.headimg1, "桂花载酒", "2015-10-01");
         exploreList.add(item1);
         exploreList.add(item2);
         exploreList.add(item3);
@@ -191,12 +199,12 @@ public class MainActivity extends AppCompatActivity {
         InstanceEntityHelper.newArticle(1, 1, R.drawable.a, "伊利亚特", getString(R.string.longtext1));
         InstanceEntityHelper.newArticle(1, 1, R.drawable.b, "奥德修斯", getString(R.string.longtext2));
         InstanceEntityHelper.newArticle(1, 1, R.drawable.c, "埃涅阿斯", getString(R.string.longtext3));
-        InstanceEntityHelper.newArticle(1, 1, R.drawable.d, "阿斯卡尼俄斯", getString(R.string.longtext4));
+        InstanceEntityHelper.newArticle(1, 1, R.drawable.d, "阿斯卡尼俄", getString(R.string.longtext4));
 
-        InstanceEntityHelper.newArticle(1, 2, R.drawable.e, "东正教", "东正教");
-        InstanceEntityHelper.newArticle(1, 2, R.drawable.f, "星月旗", "星月旗");
-        InstanceEntityHelper.newArticle(1, 2, R.drawable.g, "十字军", "十字军");
-        InstanceEntityHelper.newArticle(1, 2, R.drawable.h, "摩西十诫", "摩西十诫");
+        InstanceEntityHelper.newArticle(1, 2, R.drawable.gakki, "东正教", "东正教");
+        InstanceEntityHelper.newArticle(1, 2, R.drawable.a, "星月旗", "星月旗");
+        InstanceEntityHelper.newArticle(1, 2, R.drawable.sakura, "十字军", "十字军");
+        InstanceEntityHelper.newArticle(1, 2, R.drawable.headimg2, "摩西十诫", "摩西十诫");
 
     }
 

@@ -49,6 +49,9 @@ public class Explore_ListAdapter extends RecyclerView.Adapter<Explore_ListAdapte
         viewHolder.imageView.setImageResource(item.getImg_id());
         viewHolder.titleView.setText(item.getTitle());
         viewHolder.briefView.setText(item.getBrief());
+        viewHolder.userImg.setImageResource(item.getHead_img());
+        viewHolder.dateView.setText(item.getTime());
+        viewHolder.userNameView.setText(item.getUser_name());
 
         if (listener != null) {
             viewHolder.itemView.setOnClickListener(v -> listener.clickItem(i));
@@ -61,14 +64,18 @@ public class Explore_ListAdapter extends RecyclerView.Adapter<Explore_ListAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-        TextView titleView, briefView;
+        ImageView imageView, userImg;
+        TextView titleView, briefView, userNameView, dateView;
         View itemView;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.ExploreItem_img);
             titleView = itemView.findViewById(R.id.ExploreItem_Title);
             briefView = itemView.findViewById(R.id.ExploreItem_brief);
+            userImg = itemView.findViewById(R.id.ExploreItem_userImg);
+            userNameView = itemView.findViewById(R.id.ExploreItem_userName);
+            dateView = itemView.findViewById(R.id.ExploreItem_date);
             this.itemView = itemView;
         }
     }

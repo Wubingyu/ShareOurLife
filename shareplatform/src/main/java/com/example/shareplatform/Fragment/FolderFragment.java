@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.shareplatform.Adapter.Article_ListAdapter;
@@ -52,9 +53,14 @@ public class FolderFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_folder, container, false);
-        ImageView imageView = view.findViewById(R.id.Folder_Fragment_img);
-        imageView.setTransitionName(transName);
 
+
+        ImageView imageView = view.findViewById(R.id.Folder_Fragment_img);
+        imageView.setImageResource(InstanceEntityHelper.getFolderByID(getArguments().getInt(FOLDER_ID)).getImg_id());
+        TextView textView = view.findViewById(R.id.Folder_Fragment_title);
+        textView.setText(InstanceEntityHelper.getFolderByID(getArguments().getInt(FOLDER_ID)).getTitle());
+
+        imageView.setTransitionName(transName);
 
         //创建自己的RecyclerView，并设置流式布局
         recyclerView = view.findViewById(R.id.Folder_Fragment_RecyclerView);

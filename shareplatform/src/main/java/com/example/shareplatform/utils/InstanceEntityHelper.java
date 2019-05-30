@@ -68,6 +68,24 @@ public class InstanceEntityHelper {
         return null;
     }
 
+    public static Folder getFolderByID(int FolderID){
+        for (Folder folder : folders) {
+            if (folder.getFolderID() == FolderID) {
+                return folder;
+            }
+        }
+        return null;
+    }
+
+    public static void removeArticleByID(int ArticleID){
+        for (Article article : articles) {
+            if (article.getArticleId() == ArticleID) {
+                articles.remove(article);
+                return;
+            }
+        }
+    }
+
     private static int setArticleID(int articleId) {
         ARTICLE_ID++;
         return ARTICLE_ID;

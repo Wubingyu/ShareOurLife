@@ -38,6 +38,7 @@
             android:layout_below="@+id/card_item_folder_img"/>
 
         <LinearLayout
+            android:layout_marginTop="10dp"
             android:layout_below="@id/card_item_folder_RecyclerView"
             android:orientation="horizontal"
             android:layout_width="match_parent"
