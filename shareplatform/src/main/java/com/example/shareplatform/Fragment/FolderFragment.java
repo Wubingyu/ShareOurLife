@@ -3,6 +3,7 @@ package com.example.shareplatform.Fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,6 +30,8 @@ public class FolderFragment extends Fragment {
     String transName;
     RecyclerView recyclerView;
     Article_ListAdapter adapter;
+    int folderID;
+
     private static final String KEY_TRANS = "trans";
     private static final String FOLDER_ID = "folderID";
 
@@ -45,7 +48,9 @@ public class FolderFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         transName = getArguments().getString(KEY_TRANS);
-        items = InstanceEntityHelper.getArticleByFolderID(getArguments().getInt(FOLDER_ID));
+        folderID = getArguments().getInt(FOLDER_ID);
+        items = InstanceEntityHelper.getArticleByFolderID(folderID);
+
     }
 
     @Override
@@ -54,6 +59,9 @@ public class FolderFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_folder, container, false);
 
+
+        FloatingActionButton floatingActionButton = view.findViewById(R.id.Folder_Fragment_FloatingActionButton);
+        floatingActionButton.setOnClickListener(v -> ((MainActivity) getActivity()).addArticle(folderID));
 
         ImageView imageView = view.findViewById(R.id.Folder_Fragment_img);
         imageView.setImageResource(InstanceEntityHelper.getFolderByID(getArguments().getInt(FOLDER_ID)).getImg_id());
@@ -74,4 +82,7 @@ public class FolderFragment extends Fragment {
         return view;
     }
 
+    public void notifyDataChange() {
+        adapter.notifyDataSetChanged();
+    }
 }

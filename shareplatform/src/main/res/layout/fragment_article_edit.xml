@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragment.ArticleShowFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/ArticleEdit_img"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/imageview_hint"
+        android:background="@color/grey_300"/>
+
+
+    <EditText
+        android:id="@+id/ArticleEdit_title"
+        android:hint="输入标题"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_below="@id/ArticleEdit_img"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ArticleEdit_title"
+        >
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp">
+        <EditText
+            android:id="@+id/ArticleEdit_context"
+            android:hint="输入正文"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"/>
+    </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/ArticleEdit_finish"
+        android:src="@drawable/ic_finish"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="66dp"
+        android:layout_marginRight="28dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

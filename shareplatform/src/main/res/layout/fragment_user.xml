@@ -23,7 +23,7 @@
             <TextView
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="50dp"
-                android:text="吴咕咕"
+                android:text="吴凡"
                 android:textStyle="bold"
                 android:textSize="30dp"
                 android:layout_width="match_parent"
@@ -106,7 +106,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:text="吴咕咕"
+                    android:text="吴凡"
                     android:textSize="15dp"
                     android:layout_gravity="center"
                     android:layout_width="0dp"

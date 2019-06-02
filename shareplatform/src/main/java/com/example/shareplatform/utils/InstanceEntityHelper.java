@@ -33,8 +33,14 @@ public class InstanceEntityHelper {
         return folder;
     }
 
-    public static Article newArticle(int userId, int folderId, int img_id, String title, String context) {
+    public static Article newArticleByRid(int userId, int folderId, int img_id, String title, String context) {
         article = new Article(setArticleID(ARTICLE_ID), userId, folderId, img_id, title, context);
+        articles.add(article);
+        return article;
+    }
+
+    public static Article newArticleByPath(int userID, int folderID, String title, String context, String path) {
+        article = new Article(setArticleID(ARTICLE_ID), userID, folderID, title, context, path);
         articles.add(article);
         return article;
     }

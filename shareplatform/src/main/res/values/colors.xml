@@ -9,11 +9,22 @@
     <color name="Indigo_500">#3F51B5</color>
     <color name="Indigo_900">#1A237E</color>
     <color name="grey_300">#E0E0E0</color>
+    <color name="grey">#eeeeee</color>
 
     <color name="no8328_1">#a8d8ea</color>
     <color name="no8328_2">#aa96da</color>
     <color name="no8328_3">#fcbad3</color>
     <color name="no8328_4">#ffffd2</color>
+    
+    <color name="Light_primary_color">#B3E5FC</color>
+    <color name="primary_color">#03A9F4</color>
+    <color name="accent_color">#FFEB3B</color><!--强调色-->
+    <color name="divider_color">#BDBDBD</color>
+    <color name="text_icon_color">#FFFFFF</color>
+    <color name="primary_text_color">#212121</color>
+    <color name="secondary_text">#757575</color>
+
+
 
 
 </resources>

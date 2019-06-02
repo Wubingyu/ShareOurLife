@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/Folder_Fragment_AppBar"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@color/white">
@@ -36,7 +37,19 @@
     <android.support.v7.widget.RecyclerView
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:id="@+id/Folder_Fragment_RecyclerView"
+        android:layout_below="@id/Folder_Fragment_AppBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
-</android.support.design.widget.CoordinatorLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/Folder_Fragment_FloatingActionButton"
+        android:src="@drawable/ic_add_1"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="66dp"
+        android:layout_marginRight="28dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:rippleColor="@color/accent_color"/>
+
+</RelativeLayout>

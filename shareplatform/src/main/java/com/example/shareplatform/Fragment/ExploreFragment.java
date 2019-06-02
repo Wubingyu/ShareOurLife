@@ -9,6 +9,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.shareplatform.Adapter.Explore_ListAdapter;
 import com.example.shareplatform.Entity.ExploreArticle;
@@ -27,6 +28,8 @@ public class ExploreFragment extends Fragment {
 
     RecyclerView recyclerView;
     Explore_ListAdapter adapter;
+
+    ImageView collectView, cancelView;
 
 
     public ExploreFragment() {
@@ -65,6 +68,10 @@ public class ExploreFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         touchHelper.attachToRecyclerView(recyclerView);
 
+        collectView = view.findViewById(R.id.ExploreFragment_collect);
+        cancelView = view.findViewById(R.id.ExploreFragment_cancel);
+        collectView.setOnClickListener(v -> adapter.onSwipe(0));
+        cancelView.setOnClickListener(v -> adapter.onSwipe(0));
         return view;
     }
 

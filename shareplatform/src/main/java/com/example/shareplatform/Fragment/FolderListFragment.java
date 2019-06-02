@@ -28,6 +28,7 @@ public class FolderListFragment extends Fragment {
 
     Folder_ListAdapter adapter;
     RecyclerView recyclerView;
+    FolderFragment fragment;
 
     public static FolderListFragment newInstance(ArrayList<Folder> folders) {
         FolderListFragment fragment = new FolderListFragment();
@@ -61,7 +62,7 @@ public class FolderListFragment extends Fragment {
         adapter.setListener(new Folder_ListAdapter.OnClickListener() {
             @Override
             public void onCardClick(int position, ImageView imageView, int folderID) {
-                FolderFragment fragment = FolderFragment.newInstance("transition" + position, folderID);
+                fragment = FolderFragment.newInstance("transition" + position, folderID);
 
                 ((MainActivity) getActivity()).showFragmentWithTransition(FolderListFragment.this, fragment, imageView, "transition" + position);
             }
@@ -71,8 +72,20 @@ public class FolderListFragment extends Fragment {
                 ((MainActivity) getActivity()).showArticleWithTransition(FolderListFragment.this, ArticleID);
 
             }
+
+            @Override
+            public void onAddArticle(int FolderID) {
+                ((MainActivity)getActivity()).addArticle(FolderID);
+            }
         });
         return view;
     }
 
+
+    public void notifyDataChange() {
+        adapter.notifyDataSetChanged();
+        if (fragment != null) {
+            fragment.notifyDataChange();
+        }
+    }
 }

@@ -14,14 +14,24 @@ public class Article implements Parcelable {
     int img_id;
     String title;
     String context;
+    String img_path;
 
     public Article(int articleId, int userId, int folderId, int img_id, String title, String context) {
+        this(articleId, userId, folderId, img_id, title, context, null);
+    }
+
+    public Article(int articleId, int userId, int folderId, String title, String context, String img_path) {
+        this(articleId, userId, folderId, 0, title, context, img_path);
+    }
+
+    public Article(int articleId, int userId, int folderId, int img_id, String title, String context, String img_path) {
         ArticleId = articleId;
         UserId = userId;
         FolderId = folderId;
         this.img_id = img_id;
         this.title = title;
         this.context = context;
+        this.img_path = img_path;
     }
 
     protected Article(Parcel in) {
@@ -31,6 +41,7 @@ public class Article implements Parcelable {
         img_id = in.readInt();
         title = in.readString();
         context = in.readString();
+        img_path = in.readString();
     }
 
     public static final Creator<Article> CREATOR = new Creator<Article>() {
@@ -58,6 +69,7 @@ public class Article implements Parcelable {
         dest.writeInt(img_id);
         dest.writeString(title);
         dest.writeString(context);
+        dest.writeString(img_path);
     }
 
     public int getArticleId() {
@@ -106,5 +118,13 @@ public class Article implements Parcelable {
 
     public void setContext(String context) {
         this.context = context;
+    }
+
+    public String getImg_path() {
+        return img_path;
+    }
+
+    public void setImg_path(String img_path) {
+        this.img_path = img_path;
     }
 }

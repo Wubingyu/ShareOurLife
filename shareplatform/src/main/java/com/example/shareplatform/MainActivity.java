@@ -3,16 +3,15 @@ package com.example.shareplatform;
 import android.os.Build;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.TransitionInflater;
 import android.view.View;
+import android.widget.Toast;
 
-import com.example.shareplatform.Entity.Article;
 import com.example.shareplatform.Entity.ExploreArticle;
-import com.example.shareplatform.Entity.Folder;
 import com.example.shareplatform.Entity.Message;
+import com.example.shareplatform.Fragment.ArticleEditFragment;
 import com.example.shareplatform.Fragment.ArticleShowFragment;
 import com.example.shareplatform.Fragment.ExploreFragment;
 import com.example.shareplatform.Fragment.FolderListFragment;
@@ -25,6 +24,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     ArrayList<Fragment> fragments = new ArrayList<>();
+    FolderListFragment folderListFragment;
+    MessageFragment messageFragment;
 
     int this_id = 0;
     int last_id = 0;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         initItems();
         initFragment();
         initView();
+
     }
 
 
@@ -59,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initFragment() {
-        FolderListFragment folderListFragment = FolderListFragment.newInstance(InstanceEntityHelper.getFolders(userID));
+        folderListFragment = FolderListFragment.newInstance(InstanceEntityHelper.getFolders(userID));
 
-        MessageFragment messageFragment = MessageFragment.newInstance(messageList);
+        messageFragment = MessageFragment.newInstance(messageList);
         ExploreFragment exploreFragment = ExploreFragment.newInstance(exploreList);
         UserFragment userFragment = new UserFragment();
 
@@ -168,6 +170,14 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
     }
 
+    public void addArticle(int FolderID) {
+        ArticleEditFragment articleEditFragment = ArticleEditFragment.newInstance(FolderID);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_placeholder, articleEditFragment)
+                .addToBackStack(null)
+                .commit();
+    }
+
     private void initExplore() {
         ExploreArticle item1 = new ExploreArticle("新垣结衣", getString(R.string.gakki), R.drawable.gakki, R.drawable.headimg1,"漫漫旅途","2018-05-26");
         ExploreArticle item2 = new ExploreArticle("罗马", "罗马不是一天建成的", R.drawable.i, R.drawable.headimg2, "曾浩然", "2019-01-08");
@@ -196,16 +206,33 @@ public class MainActivity extends AppCompatActivity {
 
     private void initArticles() {
 
-        InstanceEntityHelper.newArticle(1, 1, R.drawable.a, "伊利亚特", getString(R.string.longtext1));
-        InstanceEntityHelper.newArticle(1, 1, R.drawable.b, "奥德修斯", getString(R.string.longtext2));
-        InstanceEntityHelper.newArticle(1, 1, R.drawable.c, "埃涅阿斯", getString(R.string.longtext3));
-        InstanceEntityHelper.newArticle(1, 1, R.drawable.d, "阿斯卡尼俄", getString(R.string.longtext4));
+        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.a, "伊利亚特", getString(R.string.longtext1));
+        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.b, "奥德修斯", getString(R.string.longtext2));
+        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.c, "埃涅阿斯", getString(R.string.longtext3));
+        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.d, "阿斯卡尼俄", getString(R.string.longtext4));
 
-        InstanceEntityHelper.newArticle(1, 2, R.drawable.gakki, "东正教", "东正教");
-        InstanceEntityHelper.newArticle(1, 2, R.drawable.a, "星月旗", "星月旗");
-        InstanceEntityHelper.newArticle(1, 2, R.drawable.sakura, "十字军", "十字军");
-        InstanceEntityHelper.newArticle(1, 2, R.drawable.headimg2, "摩西十诫", "摩西十诫");
+        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.gakki, "东正教", "东正教");
+        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.a, "星月旗", "星月旗");
+        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.sakura, "十字军", "十字军");
+        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.headimg2, "摩西十诫", "摩西十诫");
 
     }
 
+
+    /**
+     * 更新文章
+     * @param Folder_ID
+     * @param title
+     * @param context
+     * @param imagePath
+     */
+    public void notifyAddArticle(int Folder_ID, String title, String context, String imagePath) {
+        InstanceEntityHelper.newArticleByPath(1, Folder_ID, title, context, imagePath);
+        if (folderListFragment != null) {
+
+            folderListFragment.notifyDataChange();
+        }
+
+        onBackPressed();
+    }
 }

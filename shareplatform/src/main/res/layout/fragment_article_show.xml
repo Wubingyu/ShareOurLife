@@ -18,13 +18,19 @@
     <TextView
         android:id="@+id/ArticleShow_title"
         android:text="gakki"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="36dp"/>
+        android:layout_height="56dp"/>
 
     <TextView
         android:id="@+id/ArticleShow_context"
+        android:lineSpacingMultiplier="1.2"
+        android:textCursorDrawable="@drawable/cursor"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="7"/>

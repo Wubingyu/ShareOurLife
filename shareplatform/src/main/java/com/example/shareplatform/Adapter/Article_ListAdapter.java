@@ -1,5 +1,7 @@
 package com.example.shareplatform.Adapter;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -45,7 +47,12 @@ public class Article_ListAdapter extends RecyclerView.Adapter<Article_ListAdapte
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Article item = items.get(i);
         viewHolder.textView.setText(item.getTitle());
-        viewHolder.imageView.setImageResource(item.getImg_id());
+        if (item.getImg_id() != 0) {
+            viewHolder.imageView.setImageResource(item.getImg_id());
+        }else {
+            Bitmap bitmap = BitmapFactory.decodeFile(item.getImg_path());
+            viewHolder.imageView.setImageBitmap(bitmap);
+        }
         if (listener != null) {
             viewHolder.itemView.setOnClickListener(v -> listener.onViewClick(item.getArticleId()));
 

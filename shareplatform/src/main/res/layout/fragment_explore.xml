@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     android:paddingTop="80dp">
 
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/ExploreFragment_RecyclerView"
         android:layout_marginLeft="40dp"
@@ -17,6 +19,12 @@
         android:layout_weight="4">
     </android.support.v7.widget.RecyclerView>
 
+    <TextView
+        android:gravity="center"
+        android:text="左滑已阅       右滑收藏"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginBottom="15dp"/>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -31,24 +39,20 @@
                 android:layout_height="match_parent" />
 
             <ImageView
-                android:src="@drawable/ic_close"
+                android:id="@+id/ExploreFragment_cancel"
+                android:src="@drawable/ic_cancel"
                 android:layout_gravity="center_vertical"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_marginRight="45dp"/>
 
             <ImageView
-                android:src="@drawable/ic_favorite"
-                android:layout_gravity="center_vertical"
-                android:layout_width="50dp"
-                android:layout_height="50dp" />
-
-            <ImageView
+                android:id="@+id/ExploreFragment_collect"
                 android:layout_marginLeft="45dp"
                 android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_more"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+                android:src="@drawable/ic_collect"
+                android:layout_width="42dp"
+                android:layout_height="42dp"/>
 
             <TextView
                 android:layout_width="0dp"

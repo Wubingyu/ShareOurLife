@@ -28,11 +28,16 @@ import java.util.ArrayList;
 public class Folder_ListAdapter extends RecyclerView.Adapter<Folder_ListAdapter.ViewHolder> {
     ArrayList<Folder> items; //null并没有请求内存空间，所以下面的card_items不能null，因为它要add。但是items是在构造函数中传过来。
     Context context;
+    CardArticle_ListAdapter adapter;
+    ArrayList<Article> card_items;
+
 
     public interface OnClickListener {
         void onCardClick(int position, ImageView imageView, int folderID);
 
         void onArticleClick(int ArticleID);
+
+        void onAddArticle(int FolderID);
     }
 
     private OnClickListener listener;
@@ -67,9 +72,9 @@ public class Folder_ListAdapter extends RecyclerView.Adapter<Folder_ListAdapter.
         viewHolder.imageView.setImageResource(item.getImg_id());
 
 
-        ArrayList<Article> card_items = InstanceEntityHelper.getArticleByFolderID(item.getFolderID());
+        card_items = InstanceEntityHelper.getArticleByFolderID(item.getFolderID());
 
-        CardArticle_ListAdapter adapter;
+
         adapter = new CardArticle_ListAdapter(card_items);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         viewHolder.recyclerView.setLayoutManager(linearLayoutManager);
@@ -84,9 +89,9 @@ public class Folder_ListAdapter extends RecyclerView.Adapter<Folder_ListAdapter.
 
         //设置点击事件
         if (listener != null) {
-            viewHolder.cardView.setOnClickListener(v -> listener.onCardClick(i, viewHolder.imageView, item.getFolderID()));
-            adapter.setListener(ArticleID -> listener.onArticleClick(ArticleID));
-
+            viewHolder.showView.setOnClickListener(v -> listener.onCardClick(i, viewHolder.imageView, item.getFolderID()));
+            viewHolder.addView.setOnClickListener(v -> listener.onAddArticle(item.getFolderID()));
+            adapter.setListener(ArticleID -> listener.onArticleClick(ArticleID)); //这个是设置卡片内文章列表的点击事件
         }
 
     }
@@ -97,18 +102,21 @@ public class Folder_ListAdapter extends RecyclerView.Adapter<Folder_ListAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        CardView cardView;
-        TextView textView;
-        ImageView imageView;
+        TextView textView, showView;
+        ImageView imageView, addView;
         RecyclerView recyclerView;
-        int[] articles_id;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            cardView = itemView.findViewById(R.id.card_item_folder_card);
             textView = itemView.findViewById(R.id.card_item_folder_text);
             imageView = itemView.findViewById(R.id.card_item_folder_img);
             recyclerView = itemView.findViewById(R.id.card_item_folder_RecyclerView);
+            showView = itemView.findViewById(R.id.card_item_folder_SHOW);
+            addView = itemView.findViewById(R.id.card_item_folder_ADD);
         }
+    }
+
+
+    public void notifyArticleList() {
     }
 
 }

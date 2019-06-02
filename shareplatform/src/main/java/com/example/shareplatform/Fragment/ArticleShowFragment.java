@@ -1,6 +1,8 @@
 package com.example.shareplatform.Fragment;
 
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -48,7 +50,12 @@ public class ArticleShowFragment extends Fragment {
         titleView = view.findViewById(R.id.ArticleShow_title);
         contextView = view.findViewById(R.id.ArticleShow_context);
 
-        imageView.setImageResource(article.getImg_id());
+        if (article.getImg_id() != 0) {
+            imageView.setImageResource(article.getImg_id());
+        } else {
+            Bitmap bitmap = BitmapFactory.decodeFile(article.getImg_path());
+            imageView.setImageBitmap(bitmap);
+        }
         titleView.setText(article.getTitle());
         contextView.setText(article.getContext());
 
