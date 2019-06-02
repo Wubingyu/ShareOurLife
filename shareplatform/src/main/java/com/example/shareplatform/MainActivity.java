@@ -200,21 +200,24 @@ public class MainActivity extends AppCompatActivity {
 
     private void initFolders() {
 
+        InstanceEntityHelper.newFolder(1, R.drawable.miyazaki_hayao, getString(R.string.Miyazaki_Hayao));
         InstanceEntityHelper.newFolder(1, R.drawable.a, "罗马建筑");
         InstanceEntityHelper.newFolder(1, R.drawable.b, "苏格兰");
     }
 
     private void initArticles() {
 
-        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.a, "伊利亚特", getString(R.string.longtext1));
-        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.b, "奥德修斯", getString(R.string.longtext2));
-        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.c, "埃涅阿斯", getString(R.string.longtext3));
-        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.d, "阿斯卡尼俄", getString(R.string.longtext4));
+//        InstanceEntityHelper.newArticleByRid(1,1,R.drawable.miyazaki_hayao_castle_in_the_sky, "")
 
-        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.gakki, "东正教", "东正教");
-        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.a, "星月旗", "星月旗");
-        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.sakura, "十字军", "十字军");
-        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.headimg2, "摩西十诫", "摩西十诫");
+        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.a, "伊利亚特", getString(R.string.longtext1));
+        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.b, "奥德修斯", getString(R.string.longtext2));
+        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.c, "埃涅阿斯", getString(R.string.longtext3));
+        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.d, "阿斯卡尼俄", getString(R.string.longtext4));
+
+        InstanceEntityHelper.newArticleByRid(1, 3, R.drawable.gakki, "东正教", "东正教");
+        InstanceEntityHelper.newArticleByRid(1, 3, R.drawable.a, "星月旗", "星月旗");
+        InstanceEntityHelper.newArticleByRid(1, 3, R.drawable.sakura, "十字军", "十字军");
+        InstanceEntityHelper.newArticleByRid(1, 3, R.drawable.headimg2, "摩西十诫", "摩西十诫");
 
     }
 
