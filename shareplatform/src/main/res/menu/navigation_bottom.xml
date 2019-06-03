@@ -19,5 +19,4 @@
     <item android:id="@+id/navigation_bottom_info"
         android:icon="@drawable/ic_user"
         android:title="信息"/>
-
 </menu>

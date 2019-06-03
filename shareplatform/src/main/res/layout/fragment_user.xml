@@ -55,7 +55,7 @@
         </LinearLayout>
 
         <com.example.shareplatform.utils.CircleImageView
-            android:src="@drawable/headimg"
+            android:src="@drawable/miyazaki_hayao_castle_in_the_sky"
             android:layout_marginRight="20dp"
             android:layout_gravity="center"
             android:layout_width="0dp"

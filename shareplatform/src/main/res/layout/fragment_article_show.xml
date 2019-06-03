@@ -25,14 +25,19 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"/>
 
-    <TextView
-        android:id="@+id/ArticleShow_context"
-        android:lineSpacingMultiplier="1.2"
-        android:textCursorDrawable="@drawable/cursor"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"/>
+        android:layout_weight="7">
+        <TextView
+            android:id="@+id/ArticleShow_context"
+            android:lineSpacingMultiplier="1.2"
+            android:textCursorDrawable="@drawable/cursor"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </android.support.v4.widget.NestedScrollView>
+
 
 </LinearLayout>

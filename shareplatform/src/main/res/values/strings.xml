@@ -43,5 +43,28 @@
     </string>
     
     <string name="Miyazaki_Hayao">宫崎骏</string>
+    <string name="castle_in_the_sky_title">天空之城</string>
+    <string name="castle_in_the_sky_context">
+        "   《天空之城》（天空の城ラピュタ）是日本吉卜力工作室制作的动画电影，宫崎骏担任原作、监督、脚本设计、角色设定及导演，田中真弓、横泽启子、初井言荣、寺田农等人配音。该片于1986年8月2日在日本上映。\n"
+        "\n"
+        "   故事剧情如下:\n"
+        "\n"
+        "   小姑娘希达（SHEETA）是传说中“天空之城拉普达（Laputa）”王族的后裔，那曾是超越地上文明不知几千年的空中文明，但不知为何，希达的祖先离开“天空之城”，抛弃发达的科技，在地面上过起隐居的生活。然而一天，几个不明身份的男子出现在她家门口。\n"
+        "\n"
+        "   故事由希达所坐的军队飞行船遭到空中海盗的袭击而开始。争斗中希达从万米高空的飞行船上跌落下来…… 故事另外一个主人公少年巴斯（PASU）是矿工机师的学徒，这一天收工时，发现天上有个亮晶晶的东西正在慢慢地下落。是什么？UFO？他飞也似的跑过去，发现是一个好可爱的女孩子，在一团蓝光的包围下从天上飘下来了……\n"
+        "\n"
+        "   第二天，希达在巴斯的房间里醒来，发现房里有一张“天空之城拉普达”的照片。这是巴斯的父亲冒着生命的危险历尽艰险才拍到的真正的天空之城，但除了巴斯之外，没有人相信他。于是父亲在郁郁寡欢中去世了。巴斯发誓，一定要向他人证实，世上真的有天空之城存在！\n"
+        "\n"
+        "   嗅觉灵敏的海盗很快就找上门来了。接下来就是一段令人眼花缭乱的追捕与逃跑镜头，最后二人在众目睽睽之下掉入万丈深的矿井，希达戴的飞行石又一次发光，令他二人安全飘落。矿井中，飞行石和井下的矿石发生共鸣，原来这里曾是开采飞行石原料的地方，但提炼飞行石的技术，传说只有拉普达人才掌握着。\n"
+        "\n"
+        "   二人刚出矿井，就被军队的人抓住了。希达被带往要塞，在那里，一个叫穆斯卡的人给希达看一个巨大的机器人，说是从天空之城掉下来的，凭当时的科技无法令它再启动。当天晚上，希达念起祖辈所流传的寻求帮助的咒语，飞行石发出光茫，令机器人再次活起来，整个要塞变成火的海洋。\n"
+    </string>
+    <string name="miyazaki_hayao_howls_moving_castle">哈尔的移动城堡</string>
+    <string name="miyazaki_hayao_kikis_delivery_service">魔女宅急便</string>
+    <string name="miyazaki_hayao_my_neighbor_totoro">龙猫</string>
+    <string name="miyazaki_hayao_porco_rosso">红猪</string>
+    <string name="miyazaki_hayao_princess_mononoke">幽灵公主</string>
+    <string name="miyazaki_hayao_spirited_away">千与千寻</string>
+    <string name="miyazaki_hayao_the_wind_rises">起风了</string>
 
 </resources>

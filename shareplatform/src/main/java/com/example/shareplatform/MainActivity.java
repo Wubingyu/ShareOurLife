@@ -149,7 +149,6 @@ public class MainActivity extends AppCompatActivity {
                 .addSharedElement(sharedView, sharedElementName)
                 .addToBackStack(null)
                 .commit();
-
     }
 
     /**
@@ -201,18 +200,26 @@ public class MainActivity extends AppCompatActivity {
     private void initFolders() {
 
         InstanceEntityHelper.newFolder(1, R.drawable.miyazaki_hayao, getString(R.string.Miyazaki_Hayao));
-        InstanceEntityHelper.newFolder(1, R.drawable.a, "罗马建筑");
+        InstanceEntityHelper.newFolder(1, R.drawable.a1, "罗马建筑");
         InstanceEntityHelper.newFolder(1, R.drawable.b, "苏格兰");
     }
 
     private void initArticles() {
 
-//        InstanceEntityHelper.newArticleByRid(1,1,R.drawable.miyazaki_hayao_castle_in_the_sky, "")
+        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.miyazaki_hayao_castle_in_the_sky, getString(R.string.castle_in_the_sky_title), getString(R.string.castle_in_the_sky_context));
+        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.miyazaki_hayao_howls_moving_castle, getString(R.string.miyazaki_hayao_howls_moving_castle), getString(R.string.miyazaki_hayao_howls_moving_castle));
+        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.miyazaki_hayao_kikis_delivery_service, getString(R.string.miyazaki_hayao_kikis_delivery_service), getString(R.string.miyazaki_hayao_kikis_delivery_service));
+        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.miyazaki_hayao_my_neighbor_totoro, getString(R.string.miyazaki_hayao_my_neighbor_totoro), getString(R.string.miyazaki_hayao_my_neighbor_totoro));
+        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.miyazaki_hayao_porco_rosso, getString(R.string.miyazaki_hayao_porco_rosso), getString(R.string.miyazaki_hayao_porco_rosso));
+        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.miyazaki_hayao_princess_mononoke, getString(R.string.miyazaki_hayao_princess_mononoke), getString(R.string.miyazaki_hayao_princess_mononoke));
+        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.miyazaki_hayao_spirited_away, getString(R.string.miyazaki_hayao_spirited_away), getString(R.string.miyazaki_hayao_spirited_away));
+        InstanceEntityHelper.newArticleByRid(1, 1, R.drawable.miyazaki_hayao_the_wind_rises, getString(R.string.miyazaki_hayao_the_wind_rises), getString(R.string.miyazaki_hayao_the_wind_rises));
 
-        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.a, "伊利亚特", getString(R.string.longtext1));
-        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.b, "奥德修斯", getString(R.string.longtext2));
-        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.c, "埃涅阿斯", getString(R.string.longtext3));
-        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.d, "阿斯卡尼俄", getString(R.string.longtext4));
+
+        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.roma_5, "万神庙", getString(R.string.longtext1));
+        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.roma_2, "斗兽场", getString(R.string.longtext2));
+        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.roma_1, "巴西利卡", getString(R.string.longtext3));
+        InstanceEntityHelper.newArticleByRid(1, 2, R.drawable.roma_3, "圣彼得教堂", getString(R.string.longtext4));
 
         InstanceEntityHelper.newArticleByRid(1, 3, R.drawable.gakki, "东正教", "东正教");
         InstanceEntityHelper.newArticleByRid(1, 3, R.drawable.a, "星月旗", "星月旗");
