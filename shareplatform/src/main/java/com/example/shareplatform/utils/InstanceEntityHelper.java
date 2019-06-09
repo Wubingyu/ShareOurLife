@@ -33,6 +33,12 @@ public class InstanceEntityHelper {
         return folder;
     }
 
+    public static Folder newFolder(int userID, String imgPath, String title) {
+        folder = new Folder(setFolderID(FOLDER_ID), userID, imgPath, title);
+        folders.add(folder);
+        return folder;
+    }
+
     public static Article newArticleByRid(int userId, int folderId, int img_id, String title, String context) {
         article = new Article(setArticleID(ARTICLE_ID), userId, folderId, img_id, title, context);
         articles.add(article);
